@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DynamicBottomSheet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TOL-bS-u88">
+                                <rect key="frame" x="177.5" y="432.5" width="59" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Open"/>
+                                <connections>
+                                    <segue destination="kis-Hi-wCH" kind="presentation" animates="NO" modalPresentationStyle="overCurrentContext" id="TzB-ji-Kww"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TOL-bS-u88" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="mj1-hC-FPt"/>
+                            <constraint firstItem="TOL-bS-u88" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pYF-7y-HPp"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="129" y="94"/>
+        </scene>
+        <!--Dynamic Bottom Sheetl View Controller-->
+        <scene sceneID="5Ko-dg-vAp">
+            <objects>
+                <viewController id="kis-Hi-wCH" customClass="DynamicBottomSheetlViewController" customModule="DynamicBottomSheet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="U8a-8b-Mia">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ko0-Ag-WyV" userLabel="Dimmed View">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="jJY-dJ-Cai" appends="YES" id="Npi-q2-IGB"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qIP-g3-GIV" userLabel="Content View">
+                                <rect key="frame" x="0.0" y="896" width="414" height="350"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B75-SL-jLP" userLabel="Close Button">
+                                        <rect key="frame" x="374" y="10" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="74z-Rh-TPf"/>
+                                            <constraint firstAttribute="height" constant="30" id="n84-8q-GMg"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="X"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="xmark" catalog="system"/>
+                                        <connections>
+                                            <action selector="didTapCloseButton:" destination="kis-Hi-wCH" eventType="touchUpInside" id="fEt-T4-Y2O"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dynamic Bottom Sheet." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydL-4c-gux">
+                                        <rect key="frame" x="117" y="100" width="180" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="B75-SL-jLP" firstAttribute="trailing" secondItem="qIP-g3-GIV" secondAttribute="trailing" constant="-10" id="8uA-ou-01q"/>
+                                    <constraint firstItem="ydL-4c-gux" firstAttribute="top" secondItem="qIP-g3-GIV" secondAttribute="top" constant="100" id="J75-Gl-KgA"/>
+                                    <constraint firstItem="ydL-4c-gux" firstAttribute="centerX" secondItem="qIP-g3-GIV" secondAttribute="centerX" id="WTW-jC-gQF"/>
+                                    <constraint firstAttribute="height" constant="350" identifier="ContentViewHeight" id="g2C-x4-Rob"/>
+                                    <constraint firstItem="B75-SL-jLP" firstAttribute="top" secondItem="qIP-g3-GIV" secondAttribute="top" constant="10" id="mYX-Z3-onV"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="uEb-w0-Mgu" appends="YES" id="cvE-1A-4Bp"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cO8-xh-PAx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qIP-g3-GIV" firstAttribute="bottom" secondItem="U8a-8b-Mia" secondAttribute="bottom" constant="350" identifier="ContentViewBottom" id="17P-lL-Ql0"/>
+                            <constraint firstItem="qIP-g3-GIV" firstAttribute="leading" secondItem="cO8-xh-PAx" secondAttribute="leading" id="18F-hv-cwx"/>
+                            <constraint firstItem="Ko0-Ag-WyV" firstAttribute="bottom" secondItem="U8a-8b-Mia" secondAttribute="bottom" identifier="DimmedViewBottom" id="E2X-87-jmS"/>
+                            <constraint firstItem="Ko0-Ag-WyV" firstAttribute="top" secondItem="U8a-8b-Mia" secondAttribute="top" id="EBw-rE-OfP"/>
+                            <constraint firstItem="Ko0-Ag-WyV" firstAttribute="leading" secondItem="cO8-xh-PAx" secondAttribute="leading" id="LDI-aV-8lJ"/>
+                            <constraint firstItem="Ko0-Ag-WyV" firstAttribute="trailing" secondItem="cO8-xh-PAx" secondAttribute="trailing" id="UUX-G3-O5F"/>
+                            <constraint firstItem="qIP-g3-GIV" firstAttribute="trailing" secondItem="cO8-xh-PAx" secondAttribute="trailing" id="gML-WP-WQQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="B75-SL-jLP" id="geF-kd-E2A"/>
+                        <outlet property="contentView" destination="qIP-g3-GIV" id="0FX-Xi-MDo"/>
+                        <outlet property="dimmedView" destination="Ko0-Ag-WyV" id="gZ7-RC-IpR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zzr-by-ji0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="jJY-dJ-Cai">
+                    <connections>
+                        <action selector="didTapOutside:" destination="kis-Hi-wCH" id="q8z-PP-los"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <panGestureRecognizer delaysTouchesEnded="NO" minimumNumberOfTouches="1" id="uEb-w0-Mgu">
+                    <connections>
+                        <action selector="swipeContentView:" destination="kis-Hi-wCH" id="oLQ-0G-qbM"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1014" y="94"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
